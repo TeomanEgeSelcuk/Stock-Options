@@ -3,11 +3,14 @@ FROM python:3.11
 # Copy the requirements.txt file to the container
 COPY requirements.txt /app/requirements.txt
 
+# Update pip 
+RUN pip install --upgrade pip
+
 # Install the dependencies from the requirements.txt file
 RUN pip install -r /app/requirements.txt
 
 # Copy contents of the notebook directory to /app in the container
-COPY notebook /app
+COPY notebooks /app
 
 # Set working directory
 WORKDIR /app

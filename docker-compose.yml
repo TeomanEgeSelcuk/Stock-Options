@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: roullete_jupyter_container  # Set a custom container name
+    image: roullete-jupyter-image:latest    # Set a custom image name and tag
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/app
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: roullete_mongo_container    # Set a custom container name
+    image: mongo:4.4.10                        # Use a specific version of the image
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb_data:/data/db
+
+volumes:
+  roullete_mongodb_data:

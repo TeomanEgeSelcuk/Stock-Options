@@ -1,0 +1,8 @@
+# Ignore README.md
+README.md
+
+# Ignore specific folders inside notebooks directory
+notebooks/__pycache__/
+notebooks/.ipynb_checkpoints/
+notebooks/.Trash-0/
+notebooks/.pytest_cache/

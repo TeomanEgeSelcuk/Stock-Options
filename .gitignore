@@ -2,7 +2,9 @@
 README.md
 
 # Ignore specific folders inside notebooks directory
-notebooks/__pycache__/
-notebooks/.ipynb_checkpoints/
 notebooks/.Trash-0/
 notebooks/.pytest_cache/
+
+# Ignore all __pycache__ and .ipynb_checkpoints folders in all subdirectories
+**/__pycache__/
+**/.ipynb_checkpoints/

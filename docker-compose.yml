@@ -4,9 +4,19 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: roullete_jupyter_container  # Set a custom container name
-    image: roullete-jupyter-image:latest    # Set a custom image name and tag
+    container_name: options_container
+    image: options-image:latest
     ports:
       - "8888:8888"
     volumes:
       - ./notebooks:/app
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres_container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: optionsdb
+      POSTGRES_USER: optionsuser
+      POSTGRES_PASSWORD: optionspassword
